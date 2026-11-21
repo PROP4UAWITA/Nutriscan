@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="NutriScan">
+<meta name="theme-color" content="#21c487">
+<title>NutriScan AI</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+:root{
+  --bg:#f2f3f5; --card:#ffffff; --text:#111418; --muted:#6b7280; --line:#e6e8eb; --fill:#eceef1;
+  --g1:#21c487; --g2:#0d99b3; --grad:linear-gradient(135deg,var(--g1),var(--g2));
+  --prot:#f05c6b; --carb:#fab033; --fat:#5c8cf7; --warn:#f08c00;
+  --r:22px; --shadow:0 4px 14px rgba(0,0,0,.06);
+  --safe-b:env(safe-area-inset-bottom); --safe-t:env(safe-area-inset-top);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#000; --card:#1c1c1e; --text:#f5f5f7; --muted:#9a9aa0; --line:#2c2c2e; --fill:#2c2c2e; --shadow:none}
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding-top:var(--safe-t)}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;padding:0}
+.page{display:none;padding:16px 16px calc(96px + var(--safe-b));max-width:560px;margin:0 auto}
+.page.active{display:block}
+h1{font-size:28px;margin:0}
+h2{font-size:20px;margin:22px 0 10px}
+h3{font-size:17px;margin:0 0 10px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.card{background:var(--card);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+.row{display:flex;align-items:center;gap:12px}
+.spacer{flex:1}
+.num{font-variant-numeric:tabular-nums}
+.logo{width:48px;height:48px;border-radius:14px;background:var(--grad);display:grid;place-items:center;color:#fff;font-size:24px}
+.scanbtn{display:flex;align-items:center;gap:16px;width:100%;padding:22px;border-radius:26px;background:var(--grad);color:#fff;text-align:left;box-shadow:0 8px 22px rgba(33,196,135,.35);margin:18px 0}
+.scanbtn .t{font-size:20px;font-weight:700}
+.scanbtn svg{width:36px;height:36px;flex:none}
+.big{font-size:46px;font-weight:800;letter-spacing:-1px}
+.pills{display:flex;gap:12px;margin-top:12px}
+.pill{flex:1}
+.pill .bar{height:5px;border-radius:9px;margin-top:6px}
+.meal{display:flex;align-items:center;gap:14px;width:100%;text-align:left}
+.thumb{width:62px;height:62px;border-radius:14px;object-fit:cover;background:var(--fill);flex:none}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;border-radius:16px;font-weight:600}
+.btn.primary{background:var(--grad);color:#fff}
+.btn.soft{background:var(--fill)}
+.btn.danger{color:#e5484d;background:var(--fill)}
+.btn:disabled{opacity:.4}
+.btns{display:flex;gap:12px;margin:14px 0}
+.preview{width:100%;height:360px;border-radius:28px;background:var(--card);display:grid;place-items:center;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+.preview img{width:100%;height:100%;object-fit:cover}
+.scanline{position:absolute;left:0;right:0;height:70px;top:0;background:linear-gradient(transparent,rgba(33,196,135,.75),transparent);animation:scan 1.6s ease-in-out infinite alternate}
+@keyframes scan{to{top:calc(100% - 70px)}}
+.spinner{width:34px;height:34px;border:4px solid var(--fill);border-top-color:var(--g1);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero{width:100%;height:250px;object-fit:cover;border-radius:26px;display:block;margin-bottom:12px}
+.titleinput{width:100%;border:0;background:transparent;text-align:center;font-size:22px;font-weight:700;outline:none}
+.donutwrap{display:flex;gap:20px;align-items:center}
+.donut{width:128px;height:128px;border-radius:50%;position:relative;flex:none}
+.donut::after{content:"";position:absolute;inset:22px;border-radius:50%;background:var(--card)}
+.donut .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;text-align:center;font-weight:700;font-size:20px;line-height:1.1}
+.mrow{margin-bottom:12px}
+.track{height:6px;border-radius:9px;background:var(--fill);overflow:hidden;margin-top:5px}
+.track i{display:block;height:100%;border-radius:9px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.ing{display:flex;align-items:center;gap:10px;width:100%;padding:12px 0;border-bottom:1px solid var(--line);text-align:left}
+.ing:last-of-type{border-bottom:0}
+.warn{color:var(--warn)}
+.nrow{display:flex;justify-content:space-between;padding:7px 0;font-size:15px}
+.tabs{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-around;padding:8px 0 calc(8px + var(--safe-b));background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid var(--line);z-index:5}
+.tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:var(--muted);min-width:80px}
+.tab svg{width:25px;height:25px}
+.tab.on{color:var(--g1)}
+.topbar{display:flex;align-items:center;gap:10px;margin-bottom:12px;min-height:40px}
+.back{color:var(--g1);font-size:17px;font-weight:500}
+.field{width:100%;padding:14px;border-radius:14px;border:1px solid var(--line);background:var(--card);font-size:16px;outline:none}
+label.l{display:block;font-weight:600;margin:12px 0 6px}
+.sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:20;display:none;align-items:flex-end}
+.sheet-bg.show{display:flex}
+.sheet{background:var(--bg);width:100%;max-width:560px;margin:0 auto;border-radius:24px 24px 0 0;padding:18px 16px calc(22px + var(--safe-b));max-height:92vh;overflow:auto;animation:up .25s ease}
+@keyframes up{from{transform:translateY(40px);opacity:.4}}
+.stepper{display:flex;gap:10px;align-items:center}
+.stepper button{width:46px;height:46px;border-radius:14px;background:var(--fill);font-size:22px;font-weight:600}
+.toast{position:fixed;left:16px;right:16px;bottom:calc(100px + var(--safe-b));background:#111;color:#fff;padding:14px 16px;border-radius:16px;z-index:30;display:none;font-size:15px}
+.banner{border-left:4px solid var(--warn)}
+.seg{display:flex;background:var(--fill);border-radius:12px;padding:3px}
+.seg button{flex:1;padding:8px;border-radius:10px;font-size:14px}
+.seg button.on{background:var(--card);box-shadow:0 1px 4px rgba(0,0,0,.12);font-weight:600}
+.empty{text-align:center;padding:26px 10px}
+.dayhead{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);text-transform:uppercase;margin:18px 4px 8px}
+</style>
+</head>
+<body>
+
+<!-- INICIO -->
+<section class="page active" id="p-home">
+  <div class="row" style="margin-top:8px">
+    <div class="logo">🌿</div>
+    <div><h1>NutriScan AI</h1><div class="muted" id="today-date"></div></div>
+  </div>
+  <div class="card banner" id="key-banner" style="display:none;margin-top:16px">
+    <b>Falta tu clave de Gemini</b>
+    <div class="muted small">Ve a Ajustes y pégala para poder analizar fotos.</div>
+  </div>
+  <button class="scanbtn" onclick="openScan()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3.5"/></svg>
+    <div class="spacer"><div class="t">Escanear plato</div><div style="opacity:.9">Haz una foto o elige una de la galería</div></div>
+    <span style="font-size:22px">›</span>
+  </button>
+  <div class="card">
+    <div class="row"><h3 style="margin:0">Hoy</h3><span class="spacer"></span><span class="muted small" id="today-count"></span></div>
+    <div><span class="big num" id="today-kcal">0</span> <span class="muted">kcal</span></div>
+    <div class="pills" id="today-pills"></div>
+  </div>
+  <h2>Últimos análisis</h2>
+  <div id="recent"></div>
+</section>
+
+<!-- ESCANEAR -->
+<section class="page" id="p-scan">
+  <div class="topbar"><button class="back" onclick="go('home')">‹ Cancelar</button></div>
+  <div class="preview" id="preview">
+    <div class="muted" style="text-align:center;padding:20px">🍽️<br><br>Haz una foto de tu plato desde arriba,<br>con el plato entero a la vista.</div>
+  </div>
+  <div id="scan-actions">
+    <div class="btns">
+      <button class="btn soft" onclick="$('#cam').click()">📷 Cámara</button>
+      <button class="btn soft" onclick="$('#gal').click()">🖼️ Galería</button>
+    </div>
+    <button class="btn primary" id="analyze-btn" disabled onclick="analyze()">✨ Analizar plato</button>
+  </div>
+  <div id="scan-progress" style="display:none;text-align:center;margin-top:28px">
+    <div class="spinner"></div>
+    <h3 style="margin-top:14px" id="stage"></h3>
+    <div class="muted small">Suele tardar unos segundos.</div>
+  </div>
+  <input type="file" id="cam" accept="image/*" capture="environment" hidden>
+  <input type="file" id="gal" accept="image/*" hidden>
+</section>
+
+<!-- RESULTADO -->
+<section class="page" id="p-result">
+  <div class="topbar"><button class="back" id="result-back">‹ Volver</button></div>
+  <div id="result"></div>
+</section>
+
+<!-- HISTORIAL -->
+<section class="page" id="p-history">
+  <h1 style="margin:8px 0 6px">Historial</h1>
+  <div id="history"></div>
+</section>
+
+<!-- AJUSTES -->
+<section class="page" id="p-settings">
+  <h1 style="margin:8px 0 16px">Ajustes</h1>
+  <div class="card">
+    <h3>Gemini</h3>
+    <div id="key-status" class="small" style="margin-bottom:8px"></div>
+    <input class="field" id="key-input" type="password" placeholder="Pega aquí tu clave de Gemini" autocomplete="off" autocapitalize="off" spellcheck="false">
+    <div class="btns">
+      <button class="btn primary" onclick="saveKey()">Guardar clave</button>
+      <button class="btn soft" id="test-btn" onclick="testKey()">Probar</button>
+    </div>
+    <div id="test-msg" class="small"></div>
+    <button class="btn danger" style="margin-top:10px" onclick="deleteKey()">Borrar clave</button>
+    <p class="muted small">Consigue una clave gratis en aistudio.google.com → «Get API key». Se guarda solo en este iPhone, no en el código.</p>
+  </div>
+  <div class="card">
+    <h3>Modelo de IA</h3>
+    <input class="field" id="model-input" autocapitalize="off" spellcheck="false">
+    <p class="muted small">Por defecto «gemini-flash-latest», que siempre apunta al Gemini Flash más reciente. Cámbialo solo si Google retira ese nombre.</p>
+  </div>
+  <div class="card">
+    <h3>Datos</h3>
+    <div class="nrow"><span>Análisis guardados</span><span id="count-all" class="num"></span></div>
+    <button class="btn danger" style="margin-top:8px" onclick="deleteAll()">Borrar todo el historial</button>
+  </div>
+  <div class="card">
+    <h3>Privacidad</h3>
+    <p class="muted small" style="margin:0">Tus fotos, resultados e historial se guardan solo en este iPhone. Para analizar un plato, la foto se envía a Google Gemini; con el plan gratuito, Google puede usar esos datos para mejorar sus productos. Sin cuentas, anuncios ni seguimiento.</p>
+    <p class="muted small">NutriScan AI da estimaciones orientativas y no sustituye el consejo de un profesional de la salud o la nutrición.</p>
+  </div>
+</section>
+
+<!-- PESTAÑAS -->
+<nav class="tabs">
+  <button class="tab on" data-tab="home" onclick="go('home')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg>Inicio</button>
+  <button class="tab" data-tab="history" onclick="go('history')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Historial</button>
+  <button class="tab" data-tab="settings" onclick="go('settings')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Ajustes</button>
+</nav>
+
+<div class="sheet-bg" id="sheet-bg" onclick="if(event.target===this)closeSheet()"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+// ---------- Utilidades ----------
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+const LS = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v === null ? d : v; } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem(k, v); } catch(e){} },
+  del(k){ try { localStorage.removeItem(k); } catch(e){} }
+};
+const DEFAULT_MODEL = "gemini-flash-latest";
+const apiKey = () => LS.get("ns_key", "");
+const model = () => (LS.get("ns_model", "") || DEFAULT_MODEL).trim();
+function fmt(v, d){
+  if (d === undefined) d = v >= 100 ? 0 : v >= 10 ? 1 : 2;
+  return new Intl.NumberFormat("es-ES", {maximumFractionDigits:d}).format(v);
+}
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.style.display="block"; clearTimeout(toast._t); toast._t=setTimeout(()=>t.style.display="none",3500); }
+
+// ---------- Nutrientes ----------
+const NUTRIENTS = [
+  ["kcal","Calorías","kcal","energy"],
+  ["protein_g","Proteínas","g","macro"],["carbs_g","Carbohidratos","g","macro"],["fat_g","Grasas totales","g","macro"],
+  ["saturated_fat_g","Grasas saturadas","g","fat"],["mono_fat_g","Grasas monoinsaturadas","g","fat"],["poly_fat_g","Grasas poliinsaturadas","g","fat"],
+  ["fiber_g","Fibra","g","fat"],["sugar_g","Azúcares","g","fat"],
+  ["sodium_mg","Sodio","mg","min"],["potassium_mg","Potasio","mg","min"],["calcium_mg","Calcio","mg","min"],["iron_mg","Hierro","mg","min"],
+  ["magnesium_mg","Magnesio","mg","min"],["zinc_mg","Zinc","mg","min"],["phosphorus_mg","Fósforo","mg","min"],
+  ["vitamin_a_ug","Vitamina A","µg","vit"],["vitamin_b1_mg","Vitamina B1","mg","vit"],["vitamin_b2_mg","Vitamina B2","mg","vit"],
+  ["vitamin_b6_mg","Vitamina B6","mg","vit"],["vitamin_b12_ug","Vitamina B12","µg","vit"],["vitamin_c_mg","Vitamina C","mg","vit"],
+  ["vitamin_d_ug","Vitamina D","µg","vit"],["vitamin_e_mg","Vitamina E","mg","vit"],["vitamin_k_ug","Vitamina K","µg","vit"],["folate_ug","Folato","µg","vit"]
+].map(([key,label,unit,group]) => ({key,label,unit,group}));
+const N = Object.fromEntries(NUTRIENTS.map(n => [n.key, n]));
+
+// Nutriente de la ración = valor por 100 g × gramos / 100
+function totals(items){
+  const values = {}, partial = new Set();
+  for (const n of NUTRIENTS){
+    let sum = 0, any = false;
+    for (const it of items){
+      const v = it.per100?.[n.key];
+      if (typeof v === "number"){ sum += v * it.grams / 100; any = true; }
+      else if (it.grams > 0) partial.add(n.key);
+    }
+    if (any) values[n.key] = sum; else partial.delete(n.key);
+  }
+  return {values, partial};
+}
+function sumTotals(meals){
+  const out = {values:{}, partial:new Set()};
+  for (const m of meals){ const t = totals(m.items); for (const k in t.values) out.values[k] = (out.values[k]||0) + t.values[k]; t.partial.forEach(p=>out.partial.add(p)); }
+  return out;
+}
+const amount = (v, key) => v === undefined || v === null ? "Sin datos" : `${fmt(v, key==="kcal"?0:undefined)} ${N[key].unit}`;
+
+// ---------- Base de datos local (IndexedDB) ----------
+let db;
+function openDB(){
+  return new Promise((res, rej) => {
+    const r = indexedDB.open("nutriscan", 1);
+    r.onupgradeneeded = () => r.result.createObjectStore("meals", {keyPath:"id"});
+    r.onsuccess = () => { db = r.result; res(); };
+    r.onerror = () => rej(r.error);
+  });
+}
+const store = mode => db.transaction("meals", mode).objectStore("meals");
+const allMeals = () => new Promise(res => { const r = store("readonly").getAll(); r.onsuccess = () => res(r.result.sort((a,b)=>b.date-a.date)); r.onerror = () => res([]); });
+const saveMeal = m => new Promise(res => { const r = store("readwrite").put(m); r.onsuccess = r.onerror = () => res(); });
+const deleteMeal = id => new Promise(res => { const r = store("readwrite").delete(id); r.onsuccess = r.onerror = () => res(); });
+const getMeal = id => new Promise(res => { const r = store("readonly").get(id); r.onsuccess = () => res(r.result); r.onerror = () => res(null); });
+
+// ---------- Imagen ----------
+function loadImage(file){
+  return new Promise((res, rej) => { const url = URL.createObjectURL(file); const img = new Image(); img.onload = () => res(img); img.onerror = rej; img.src = url; });
+}
+function toJPEG(img, max, q){
+  const s = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+  const c = document.createElement("canvas");
+  c.width = Math.round(img.naturalWidth * s); c.height = Math.round(img.naturalHeight * s);
+  c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+  return c.toDataURL("image/jpeg", q);
+}
+
+// ---------- Gemini ----------
+const KEYS_JSON = "{" + NUTRIENTS.map(n => `"${n.key}": número|null`).join(", ") + "}";
+const MEAL_PROMPT = `Eres un nutricionista experto en reconocimiento visual de alimentos. Analiza la foto.
+
+Tareas:
+1. Indica si en la foto hay comida o bebida.
+2. Identifica cada alimento visible POR SEPARADO (por ejemplo: "Arroz blanco cocido", "Pechuga de pollo a la plancha", "Pimiento rojo salteado"). Incluye aceite o salsas solo si se ven o son muy probables por el aspecto (brillo, fritura), y dilo en las notas.
+3. Estima los gramos de cada alimento usando el tamaño del plato, cubiertos u otras referencias. Si no hay referencias, da una estimación prudente de una ración normal y baja la confianza.
+4. Para cada alimento, da los valores nutricionales por 100 g del alimento en ese estado (cocinado, crudo, frito...), tomando como referencia USDA FoodData Central o tablas oficiales. Si un valor no se conoce con fiabilidad razonable, pon null. No inventes.
+5. confidence: número de 0 a 1 sobre lo seguro que estás de que ese alimento y su cantidad son correctos.
+6. notes: en español, breve, qué no se puede saber por la foto (aceite, salsas, ingredientes ocultos, peso exacto).
+7. questions: hasta 3 preguntas cortas en español que ayudarían a afinar. Lista vacía si no hacen falta.
+
+Responde SOLO con JSON con esta forma exacta (nombres de alimentos en español):
+{"is_food": true, "dish_name": "nombre corto del plato", "notes": "texto", "questions": ["..."],
+ "items": [{"name": "alimento", "grams": número, "confidence": número, "per_100g": ${KEYS_JSON}}]}`;
+
+class GeminiError extends Error {}
+
+async function gemini(parts){
+  const key = apiKey();
+  if (!key) throw new GeminiError("Falta tu clave de Gemini. Ve a Ajustes y pégala.");
+  if (!navigator.onLine) throw new GeminiError("No hay conexión a internet. El análisis con Gemini necesita conexión.");
+  let resp;
+  try {
+    resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model())}:generateContent`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "x-goog-api-key": key},
+      body: JSON.stringify({contents:[{role:"user", parts}], generationConfig:{responseMimeType:"application/json", temperature:0.2}})
+    });
+  } catch(e){ throw new GeminiError("No se pudo conectar con Gemini. Revisa tu conexión."); }
+  let json = null; try { json = await resp.json(); } catch(e){}
+  if (!resp.ok){
+    const msg = json?.error?.message || `código ${resp.status}`;
+    const st = json?.error?.status || "";
+    if (resp.status === 429 || st === "RESOURCE_EXHAUSTED") throw new GeminiError("Has llegado al límite gratuito de Gemini por ahora. Prueba dentro de un rato o mañana.");
+    if (resp.status === 401 || resp.status === 403 || /API key/i.test(msg)) throw new GeminiError("La clave de Gemini no es válida. Revísala en Ajustes.");
+    if (resp.status === 404) throw new GeminiError("Ese modelo de Gemini no existe. Revisa el nombre en Ajustes.");
+    throw new GeminiError("Gemini ha devuelto un error: " + msg);
+  }
+  const text = (json?.candidates?.[0]?.content?.parts || []).filter(p => !p.thought).map(p => p.text || "").join("");
+  return parseJSON(text);
+}
+function parseJSON(text){
+  let s = String(text || "").trim().replace(/^```(json)?/i, "").replace(/```$/, "").trim();
+  const a = s.indexOf("{"), b = s.lastIndexOf("}");
+  if (a >= 0 && b > a) s = s.slice(a, b + 1);
+  try { return JSON.parse(s); } catch(e){ throw new GeminiError("La respuesta de Gemini no se ha podido leer. Vuelve a intentarlo."); }
+}
+function cleanNutrients(obj){
+  const out = {};
+  for (const n of NUTRIENTS){ const v = Number(obj?.[n.key]); if (obj?.[n.key] !== null && obj?.[n.key] !== undefined && isFinite(v) && v >= 0) out[n.key] = v; }
+  return out;
+}
+async function lookupFood(name){
+  const prompt = `Devuelve los valores nutricionales por 100 g del alimento: "${name}" (tal como se suele consumir; si no se indica, cocinado de forma sencilla). Usa como referencia USDA FoodData Central o tablas oficiales. Responde SOLO con un objeto JSON con estas claves (número o null si no hay dato fiable): ${KEYS_JSON}. No inventes valores: si no lo sabes con fiabilidad razonable, pon null.`;
+  return cleanNutrients(await gemini([{text: prompt}]));
+}
+
+// ---------- Navegación ----------
+let current = "home";
+function go(page){
+  current = page;
+  document.querySelectorAll(".page").forEach(p => p.classList.toggle("active", p.id === "p-" + page));
+  document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.tab === page));
+  window.scrollTo(0, 0);
+  if (page === "home") renderHome();
+  if (page === "history") renderHistory();
+  if (page === "settings") renderSettings();
+}
+
+// ---------- Inicio ----------
+function pills(t){
+  const p = [["Proteínas","protein_g","--prot"],["Carbos","carbs_g","--carb"],["Grasas","fat_g","--fat"]];
+  return p.map(([l,k,c]) => `<div class="pill"><div class="muted small">${l}</div><b class="num">${fmt(t.values[k]||0,0)} g</b><div class="bar" style="background:var(${c})"></div></div>`).join("");
+}
+function mealCard(m){
+  const k = totals(m.items).values.kcal || 0;
+  const d = new Date(m.date).toLocaleString("es-ES", {day:"numeric", month:"long", hour:"2-digit", minute:"2-digit"});
+  return `<button class="card meal" onclick="openResult('${m.id}')"><img class="thumb" src="${m.thumb||""}" alt=""><div class="spacer"><b>${esc(m.name)}</b><div class="muted small">${d}</div></div><div style="text-align:right"><b class="num">${fmt(k,0)}</b><div class="muted small">kcal</div></div></button>`;
+}
+async function renderHome(){
+  $("#today-date").textContent = new Date().toLocaleDateString("es-ES", {weekday:"long", day:"numeric", month:"long"}).replace(/^./, c => c.toUpperCase());
+  $("#key-banner").style.display = apiKey() ? "none" : "block";
+  const meals = await allMeals();
+  const today = meals.filter(m => new Date(m.date).toDateString() === new Date().toDateString());
+  const t = sumTotals(today);
+  $("#today-kcal").textContent = fmt(t.values.kcal || 0, 0);
+  $("#today-count").textContent = today.length === 1 ? "1 análisis" : `${today.length} análisis`;
+  $("#today-pills").innerHTML = pills(t);
+  $("#recent").innerHTML = meals.length ? meals.slice(0,5).map(mealCard).join("") : `<div class="card empty muted">🍽️<br>Aún no has analizado ningún plato.</div>`;
+}
+
+// ---------- Escanear ----------
+let picked = null;
+function openScan(){
+  picked = null;
+  $("#preview").innerHTML = `<div class="muted" style="text-align:center;padding:20px">🍽️<br><br>Haz una foto de tu plato desde arriba,<br>con el plato entero a la vista.</div>`;
+  $("#analyze-btn").disabled = true;
+  $("#scan-actions").style.display = "block"; $("#scan-progress").style.display = "none";
+  go("scan");
+}
+async function onPick(e){
+  const f = e.target.files?.[0]; e.target.value = "";
+  if (!f) return;
+  try {
+    const img = await loadImage(f);
+    picked = { send: toJPEG(img, 1280, 0.8), thumb: toJPEG(img, 900, 0.75) };
+    $("#preview").innerHTML = `<img src="${picked.thumb}" alt="">`;
+    $("#analyze-btn").disabled = false;
+  } catch(err){ toast("No se pudo abrir esa foto. Prueba con otra."); }
+}
+$("#cam").addEventListener("change", onPick);
+$("#gal").addEventListener("change", onPick);
+
+async function analyze(){
+  if (!picked) return;
+  if (!apiKey()){ toast("Falta tu clave de Gemini. Ve a Ajustes y pégala."); return; }
+  $("#scan-actions").style.display = "none"; $("#scan-progress").style.display = "block";
+  $("#preview").insertAdjacentHTML("beforeend", `<div class="scanline"></div>`);
+  $("#stage").textContent = "Gemini está analizando el plato…";
+  try {
+    const r = await gemini([{text: MEAL_PROMPT}, {inlineData:{mimeType:"image/jpeg", data: picked.send.split(",")[1]}}]);
+    $("#stage").textContent = "Calculando nutrientes…";
+    const items = (r.items || []).filter(i => i && String(i.name||"").trim()).map(i => ({
+      name: String(i.name).trim(), grams: Math.max(0, Number(i.grams) || 0),
+      confidence: Math.min(1, Math.max(0, Number(i.confidence ?? 0.5))), per100: cleanNutrients(i.per_100g)
+    }));
+    if (r.is_food === false || !items.length) throw new GeminiError("No he encontrado comida en la foto. Prueba con otra foto más cercana al plato.");
+    let notes = String(r.notes || "");
+    if (Array.isArray(r.questions) && r.questions.length) notes += (notes ? "\n\n" : "") + "Para afinar: " + r.questions.join(" ");
+    const meal = { id: String(Date.now()), date: Date.now(), name: String(r.dish_name || "Plato analizado"), notes, thumb: picked.thumb, items };
+    await saveMeal(meal);
+    openResult(meal.id, "home");
+  } catch(err){
+    toast(err instanceof GeminiError ? err.message : "Algo ha fallado. Vuelve a intentarlo.");
+    $("#scan-actions").style.display = "block"; $("#scan-progress").style.display = "none";
+    $(".scanline")?.remove();
+  }
+}
+
+// ---------- Resultado ----------
+let meal = null;
+async function openResult(id, backTo){
+  meal = await getMeal(id);
+  if (!meal) return;
+  $("#result-back").onclick = () => go(backTo || current);
+  renderResult();
+  current = "result";
+  document.querySelectorAll(".page").forEach(p => p.classList.toggle("active", p.id === "p-result"));
+  window.scrollTo(0,0);
+}
+async function persist(){ await saveMeal(meal); renderResult(); }
+
+function renderResult(){
+  const t = totals(meal.items), v = t.values;
+  const P = (v.protein_g||0)*4, C = (v.carbs_g||0)*4, F = (v.fat_g||0)*9, S = P + C + F;
+  const a1 = S ? P/S*360 : 0, a2 = S ? (P+C)/S*360 : 0;
+  const donut = S ? `conic-gradient(var(--prot) 0 ${a1}deg, var(--carb) ${a1}deg ${a2}deg, var(--fat) ${a2}deg 360deg)` : "var(--fill)";
+  const mac = [["Proteínas","protein_g","--prot",P],["Carbohidratos","carbs_g","--carb",C],["Grasas","fat_g","--fat",F]];
+  const list = (title, group) => {
+    const ns = NUTRIENTS.filter(n => n.group === group);
+    const inc = ns.some(n => t.partial.has(n.key) && v[n.key] !== undefined);
+    return `<div class="card"><h3>${title}</h3>${ns.map(n => `<div class="nrow"><span>${n.label}${t.partial.has(n.key) && v[n.key]!==undefined ? ' <span class="warn">⚠︎</span>' : ""}</span><span class="num ${v[n.key]===undefined?"muted":""}">${amount(v[n.key], n.key)}</span></div>`).join("")}${inc ? `<div class="muted small" style="margin-top:6px">⚠︎ Valor incompleto: falta el dato en algún ingrediente.</div>` : ""}</div>`;
+  };
+  $("#result").innerHTML = `
+    ${meal.thumb ? `<img class="hero" src="${meal.thumb}" alt="">` : ""}
+    <input class="titleinput" value="${esc(meal.name)}" onchange="meal.name=this.value||'Plato';saveMeal(meal)">
+    <div class="muted small" style="text-align:center;margin-bottom:14px">${new Date(meal.date).toLocaleString("es-ES",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}</div>
+    <div class="card">
+      <h3>Energía total</h3>
+      <div class="row" style="align-items:baseline"><span class="big num">${fmt(v.kcal||0,0)}</span><span class="muted">kcal</span><span class="spacer"></span><b class="muted num">${fmt((v.kcal||0)*4.184,0)} kJ</b></div>
+      ${t.partial.has("kcal") ? `<div class="small warn">A algún ingrediente le faltan datos de calorías.</div>` : ""}
+    </div>
+    <div class="card"><h3>Macronutrientes</h3>
+      <div class="donutwrap">
+        <div class="donut" style="background:${donut}"><div class="c num">${fmt((v.protein_g||0)+(v.carbs_g||0)+(v.fat_g||0),0)}<span class="muted small">g</span></div></div>
+        <div class="spacer">${mac.map(([l,k,c,kc]) => `<div class="mrow"><div class="row small"><span><i class="dot" style="background:var(${c})"></i>${l}</span><span class="spacer"></span><b class="num">${fmt(v[k]||0,1)} g</b></div><div class="track"><i style="width:${S?kc/S*100:0}%;background:var(${c})"></i></div></div>`).join("")}</div>
+      </div>
+    </div>
+    <div class="card"><div class="row"><h3 style="margin:0">Ingredientes</h3><span class="spacer"></span><span class="muted small">Toca para editar</span></div>
+      ${meal.items.map((it,i) => {
+        const kc = typeof it.per100.kcal === "number" ? `${fmt(it.per100.kcal*it.grams/100,0)} kcal` : "Sin datos";
+        return `<button class="ing" onclick="editItem(${i})"><div class="spacer"><b>${esc(it.name)}</b><div class="muted small">${fmt(it.grams,0)} g ${it.confidence<0.5?'<span class="warn">· ⚠︎ Revisar</span>':""}</div></div><span class="num">${kc}</span><span class="muted">›</span></button>`;
+      }).join("")}
+      <button class="btn soft" style="margin-top:10px" onclick="addItem()">＋ Añadir ingrediente</button>
+    </div>
+    ${meal.notes ? `<div class="card"><h3 style="color:var(--g2)">ⓘ Lo que no se ve en la foto</h3><div class="muted small" style="white-space:pre-line">${esc(meal.notes)}</div></div>` : ""}
+    ${list("Grasas, fibra y azúcares","fat")}
+    ${list("Minerales","min")}
+    ${list("Vitaminas","vit")}
+    <p class="muted small">Estimación orientativa hecha con IA a partir de una foto. El peso exacto, el aceite, las salsas o los ingredientes ocultos no se pueden ver: revisa y corrige las cantidades para que el cálculo sea más fiel.</p>
+    <button class="btn danger" onclick="removeMeal()">Borrar este análisis</button>`;
+}
+
+function openSheet(html){ $("#sheet").innerHTML = html; $("#sheet-bg").classList.add("show"); }
+function closeSheet(){ $("#sheet-bg").classList.remove("show"); }
+
+function editItem(i){
+  const it = meal.items[i];
+  const rows = keys => keys.map(k => `<div class="nrow"><span>${N[k].label}</span><span class="num">${amount(it.per100[k], k)}</span></div>`).join("");
+  openSheet(`
+    <div class="row"><h3 style="margin:0">Editar ingrediente</h3><span class="spacer"></span><button class="back" onclick="saveEdit(${i})">Hecho</button></div>
+    <label class="l">Alimento</label><input class="field" id="e-name" value="${esc(it.name)}">
+    <label class="l">Cantidad (g)</label>
+    <div class="stepper"><button onclick="step(-5)">−</button><input class="field num" id="e-grams" type="number" inputmode="decimal" value="${Math.round(it.grams)}" style="text-align:center"><button onclick="step(5)">+</button></div>
+    <p class="muted small">Si puedes pesarlo, pon el peso real: es lo que más mejora el cálculo.</p>
+    <button class="btn soft" id="e-refresh" onclick="refreshItem(${i})">✨ Actualizar valores con IA</button>
+    <p class="muted small">Úsalo si cambias el nombre del alimento.</p>
+    <div class="card" style="margin-top:10px"><h3>Por cada 100 g</h3>${rows(NUTRIENTS.map(n=>n.key))}</div>
+    <button class="btn danger" onclick="delItem(${i})">Eliminar ingrediente</button>`);
+}
+function step(d){ const e = $("#e-grams"); e.value = Math.max(0, (Number(e.value)||0) + d); }
+async function saveEdit(i){
+  const it = meal.items[i];
+  it.name = $("#e-name").value.trim() || it.name;
+  it.grams = Math.max(0, Number($("#e-grams").value) || 0);
+  closeSheet(); await persist();
+}
+async function refreshItem(i){
+  const b = $("#e-refresh"); b.disabled = true; b.textContent = "Consultando a Gemini…";
+  try {
+    const it = meal.items[i];
+    it.name = $("#e-name").value.trim() || it.name;
+    it.grams = Math.max(0, Number($("#e-grams").value) || 0);
+    it.per100 = await lookupFood(it.name);
+    await persist(); editItem(i); toast("Valores actualizados");
+  } catch(err){ toast(err.message); b.disabled = false; b.textContent = "✨ Actualizar valores con IA"; }
+}
+async function delItem(i){ meal.items.splice(i, 1); closeSheet(); await persist(); }
+function addItem(){
+  openSheet(`
+    <div class="row"><h3 style="margin:0">Añadir ingrediente</h3><span class="spacer"></span><button class="back" onclick="closeSheet()">Cancelar</button></div>
+    <label class="l">Alimento</label><input class="field" id="e-name" placeholder="Ej.: aceite de oliva, pan blanco…">
+    <label class="l">Cantidad (g)</label>
+    <div class="stepper"><button onclick="step(-5)">−</button><input class="field num" id="e-grams" type="number" inputmode="decimal" value="100" style="text-align:center"><button onclick="step(5)">+</button></div>
+    <p class="muted small">Gemini buscará sus valores por 100 g. Una cucharada de aceite son unos 10 g.</p>
+    <button class="btn primary" id="e-add" onclick="confirmAdd()">Añadir</button>`);
+}
+async function confirmAdd(){
+  const name = $("#e-name").value.trim(); if (!name){ toast("Escribe el nombre del alimento"); return; }
+  const b = $("#e-add"); b.disabled = true; b.textContent = "Consultando a Gemini…";
+  try {
+    const per100 = await lookupFood(name);
+    meal.items.push({name, grams: Math.max(0, Number($("#e-grams").value)||0), confidence: 1, per100});
+    closeSheet(); await persist();
+  } catch(err){ toast(err.message); b.disabled = false; b.textContent = "Añadir"; }
+}
+async function removeMeal(){
+  if (!confirm("¿Borrar este análisis?")) return;
+  await deleteMeal(meal.id); go("home");
+}
+
+// ---------- Historial ----------
+async function renderHistory(){
+  const meals = await allMeals();
+  if (!meals.length){ $("#history").innerHTML = `<div class="card empty muted">🕒<br>Cuando analices un plato aparecerá aquí.</div>`; return; }
+  const days = {};
+  for (const m of meals){ const k = new Date(m.date).toDateString(); (days[k] ||= []).push(m); }
+  $("#history").innerHTML = Object.values(days).map(ms => {
+    const label = new Date(ms[0].date).toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"});
+    return `<div class="dayhead"><span>${label}</span><span class="num">${fmt(sumTotals(ms).values.kcal||0,0)} kcal</span></div>${ms.map(mealCard).join("")}`;
+  }).join("");
+}
+
+// ---------- Ajustes ----------
+async function renderSettings(){
+  $("#key-status").innerHTML = apiKey() ? `<span style="color:var(--g1)">✔ Clave guardada en este iPhone</span>` : `<span class="muted">Todavía no hay clave guardada.</span>`;
+  $("#model-input").value = model();
+  $("#count-all").textContent = (await allMeals()).length;
+  $("#test-msg").textContent = "";
+}
+$("#model-input").addEventListener("change", e => { const v = e.target.value.trim(); if (v && v !== DEFAULT_MODEL) LS.set("ns_model", v); else LS.del("ns_model"); e.target.value = model(); toast("Modelo guardado"); });
+function saveKey(){
+  const v = $("#key-input").value.trim();
+  if (!v){ toast("Pega primero la clave"); return; }
+  LS.set("ns_key", v); $("#key-input").value = ""; renderSettings(); toast("Clave guardada");
+}
+function deleteKey(){ if (confirm("¿Borrar la clave de este iPhone?")){ LS.del("ns_key"); renderSettings(); } }
+async function testKey(){
+  const b = $("#test-btn"); b.disabled = true; $("#test-msg").textContent = "Probando…";
+  try { await gemini([{text:'Responde solo con el JSON {"ok": true}'}]); $("#test-msg").innerHTML = "✅ Conexión correcta con Gemini."; }
+  catch(err){ $("#test-msg").textContent = "❌ " + err.message; }
+  b.disabled = false;
+}
+async function deleteAll(){
+  if (!confirm("¿Borrar todos los análisis? No se puede deshacer.")) return;
+  await new Promise(res => { const r = store("readwrite").clear(); r.onsuccess = r.onerror = () => res(); });
+  renderSettings(); toast("Historial borrado");
+}
+
+// ---------- Arranque ----------
+openDB().then(() => { renderHome(); if (navigator.storage?.persist) navigator.storage.persist(); })
+        .catch(() => toast("No se pudo abrir el almacenamiento del navegador."));
+</script>
+</body>
+</html>
